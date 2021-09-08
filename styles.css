@@ -1,18 +1,42 @@
+:root {
+    --color-a: #DAA6FF;
+    --secondary-color: #47f1ab;
+    --tertiary-color: #bfeeff;
+    --fourthiary-color: #f4ff7a;
+}
+
 * {
     margin: 0;
     padding: 0;
-
 }
 
+body {
+    font-family: 'Azeret Mono', monospace;
+    background-color: #e5eaea;
+}
+
+h1{
+    font-size: 64px;
+    letter-spacing: -8px;
+    font-weight: 500;
+}
 .box-container{
+    position: relative;
     display: flex;
     margin-top: 24px;
     justify-content: center;
 }
+.box-grid h1{
+    color: #000000;
+    position: absolute;
+    left: 64px;
+    bottom: 12px;
+}
 .box-grid{
+    position: relative;
     display: grid;
-    grid-template-columns: 50px 75px 75px;
-    grid-template-rows: 75px 75px 75px;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px;
 }
 
 .box {
@@ -21,6 +45,13 @@
     width: auto;
     height: auto;
 }
+@media screen and (min-width: 400px){
+    .box-grid{
+        grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
+        grid-template-rows: 50px 50px 50px;
+    }
+}
+
 @media screen and (min-width: 500px){
     .box-grid{
         grid-template-columns: 75px 75px 75px 75px 75px 75px 75px 75px;
@@ -58,6 +89,25 @@
 .box:nth-child(5n+2) {
     border-radius: 0 0 100px 0;
 }
+.box:nth-child(16n+0) {
+    border-radius: 100px 0 100px 0;
+}
+.box:nth-child(16n+8) {
+    border-radius: 0 100px 100px 0;
+}
 .box:nth-child(9n+0) {
     border-radius: 0 0 0 100px;
+}
+
+.box:nth-child(4n+0) {
+    background-color: #DAA6FF;
+}
+.box:nth-child(4n+1) {
+    background-color: #47f1ab;
+}
+.box:nth-child(4n+2) {
+    background-color: #bfeeff;
+}
+.box:nth-child(4n+3) {
+    background-color: #f4ff7a;
 }
