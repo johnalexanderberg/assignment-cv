@@ -1,16 +1,25 @@
+@font-face {
+    font-family: "iA Writer Quattro V";
+    src: url(iAWriterQuattroV.ttf);
+}
+
+:root {
+    --color-primary: #8c49ff;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
+html, body {
 
 }
 
 body {
     color: #000000;
-    font-family: sans-serif;
+    font-family: "iA Writer Quattro V", sans-serif;
     padding: 3em;
 }
 
@@ -88,37 +97,33 @@ body {
     width: 250px;
 }
 
-.table_container{
-    background: #f93195;
-}
-
 table {
-    width: 100%;
-}
-
-#films {
-    font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-#films td, #films th {
-    border: 1px solid #ddd;
+table td, table th {
+    border: none;
     padding: 8px;
 }
 
-#films tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(even){background-color: #f6f4f4;}
 
-#films tr:hover {background-color: #ddd;}
+table tr:hover {background-color: #ddd;}
 
-#films th {
+table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
+    background-color: var(--color-primary);
     color: white;
 }
 
 th {
     colspan: 2;
+}
+
+.testimonial_image{
+    width: 150px;
+    border-radius: 100%;
 }
