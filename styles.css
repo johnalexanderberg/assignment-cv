@@ -17,7 +17,7 @@
 
 /* Typography */
 body {
-    padding: 5rem;
+    padding: 2rem;
     color: #000000;
     font-family: "iA Writer Quattro V", sans-serif;
     font-size: 16px;
@@ -38,6 +38,10 @@ body {
 @media screen and (min-width: 1024px){
     .grid--1x3{
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .grid--inner {
+        display: block;
     }
 }
 
@@ -76,7 +80,19 @@ th {
 /* Testimonials */
 
 .testimonial {
-padding: 1.5rem;
+padding: 1.5rem 0.5rem 0.8rem 0.5rem ;
+}
+
+@media screen and (min-width: 768px) {
+    .testimonial {
+        padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .testimonial {
+        padding: 1rem 1rem 1rem 1rem;
+    }
 }
 
 .testimonial span {
@@ -87,11 +103,12 @@ padding: 1.5rem;
 
 .testimonial__image {
 width: 100%;
+    border-radius: 100%;
 }
 
 .testimonial blockquote {
     font-style: italic;
-    justify-self: start;
+    padding-bottom: 2rem;
 }
 
 .testimonial__signature {
@@ -124,9 +141,21 @@ width: 100%;
 /* Cards */
 
 .card {
+    margin: 1rem;
 border-radius: 7px;
     box-shadow: 0 0 20px #ded6d6;
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        max-width: 100%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
 .card__header, .card__body {
