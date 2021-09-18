@@ -3,8 +3,9 @@
     src: url(iAWriterQuattroV.ttf), url(iAWriterQuattroV-Italic.ttf);
 }
 
+
 :root {
-    --color-primary: #8c49ff;
+    --color-primary: rgba(38, 66, 199, 0.94);
 }
 
 * {
@@ -16,83 +17,28 @@
 
 /* Typography */
 body {
+    padding: 5rem;
     color: #000000;
     font-family: "iA Writer Quattro V", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
 }
 
-.header {
-    height: 6rem;
-    display: grid;
-    grid-template:
-            "A B"
-            "A C" / 1fr 3fr;
-
-}
-
-@media screen and (min-width: 768px) {
-    body {
-        grid-template:
-            "A B"
-            "A C"
-            "A D" / 1fr 1fr;
-    }
-}
 
 /* Grids */
 .grid {
     display: grid;
 }
 
-.grid--1x3 {
-    grid-template-rows: 1fr 1fr 1fr;
-    justify-content: space-around;
-}
-
-@media screen and (min-width: 768px) {
-    .grid--1x3 {
-        display: flex;
-        padding: 2rem 3rem 2rem 3rem;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: center;
+@media screen and (min-width: 768px){
+    .grid--1x2{
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-
-#a {
-    background-color: #6a49ff;
-    grid-area: A;
-}
-
-#b {
-    background-color: #31f9b3;
-    display: flex;
-    justify-content: right;
-    grid-area: B;
-}
-
-.c {
-    background-color: #ff83c9;
-    grid-area: C;
-}
-
-.d {
-    background-color: #f2f931;
-    height: 250px;
-    width: 250px;
-
-}
-
-.e {
-    background-color: #b4ffd2;
-    height: 250px;
-    width: 250px;
-}
-
-.f {
-    background-color: rgba(49, 89, 249, 0.94);
-    height: 250px;
-    width: 250px;
+@media screen and (min-width: 1024px){
+    .grid--1x3{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 /* Tables */
@@ -128,108 +74,42 @@ th {
 
 
 /* Testimonials */
-.testimonials_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-@media screen and (min-width: 768px) {
-    .testimonials_container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .testimonials_container span{
-
-    }
-}
 
 .testimonial {
-    height: 80%;
-    max-width: 350px;
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 0 20px #ded6d6;
+padding: 1.5rem;
 }
 
-@media screen and (min-width: 500px) {
-    .testimonial {
-        display: grid;
-        height: auto;
-        grid-template:
-                "A B" / 1fr 1fr;
-        max-width: 80%;
-        border-radius: 12px;
-        padding: 1rem;
-        box-shadow: 0 0 20px #ded6d6;
-    }
+.testimonial span {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-
-@media screen and (min-width: 768px) {
-    .testimonial {
-        display: block;
-        height: 80%;
-        max-width: 350px;
-        border-radius: 12px;
-        padding: 2rem;
-        box-shadow: 0 0 20px #ded6d6;
-    }
-}
-
-@media screen and (min-width: 500px) {
-    .testimonial span {
-        min-height: 250px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .testimonial span {
-        min-height: auto;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .testimonial span {
-        min-height: auto;
-    }
-}
-
-.testimonial_image {
-    grid-area: A;
-    width: 100%;
-    border-radius: 100%;
-}
-
-@media screen and (min-width: 500px) {
-    .testimonial_image {
-        margin: auto;
-        width: 200px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .testimonial_image {
-        grid-area: A;
-        width: 200px;
-        border-radius: 100%;
-    }
+.testimonial__image {
+width: 100%;
 }
 
 .testimonial blockquote {
-    grid-area: B;
     font-style: italic;
+    justify-self: start;
 }
 
-
-
-.testimonial_signature {
-    grid-area: A;
+.testimonial__signature {
 }
 
-.testimonial_signature::before {
+.testimonial__person{
+    color: var(--color-primary);
+}
+.testimonial__person::before{
+    content: "-";
+}
+
+.testimonial__company {
+    font-size: 12px;
+    color: var(--color-primary);
+}
+
+.testimonial__signature::before {
     content: "-";
 }
 
@@ -238,6 +118,22 @@ th {
 }
 
 .testimonial blockquote::after {
-    text-align: right;
     content: close-quote;
+}
+
+/* Cards */
+
+.card {
+border-radius: 7px;
+    box-shadow: 0 0 20px #ded6d6;
+    overflow: hidden;
+}
+
+.card__header, .card__body {
+    padding: 1rem 2rem;
+
+}
+
+.card__header {
+    background-color: var(--color-primary);
 }
