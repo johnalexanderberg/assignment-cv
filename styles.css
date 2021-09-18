@@ -164,5 +164,6 @@ border-radius: 7px;
 }
 
 .card__header {
+    color: white;
     background-color: var(--color-primary);
 }
