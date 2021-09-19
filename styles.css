@@ -1,11 +1,5 @@
-@font-face {
-    font-family: "iA Writer Quattro V", "iA Writer Quattro V Italic";
-    src: url(iAWriterQuattroV.ttf), url(iAWriterQuattroV-Italic.ttf);
-}
-
-
 :root {
-    --color-primary: rgba(38, 66, 199, 0.94);
+    --color-primary: rgb(106, 73, 255);
 }
 
 * {
@@ -17,33 +11,215 @@
 
 /* Typography */
 body {
-    padding: 2rem;
     color: #000000;
-    font-family: "iA Writer Quattro V", sans-serif;
-    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
 }
 
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+main {
+    padding: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        padding: 0.5rem 3rem 0.5rem 3rem;
+    }
+}
+
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 0.3rem;
+    border-bottom: solid black;
+}
+
+p, li {
+    padding-top: 0.6rem;
+}
+
+p {
+    line-height: 1.4rem;
+}
+
+
+h1.banner__heading {
+    text-transform: uppercase;
+    font-size: 48px;
+    letter-spacing: -0.25rem;
+    color: white;
+    border-color: white;
+}
+
+@media screen and (min-width: 500px) {
+    h1.banner__heading {
+        font-size: 56px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    h1.banner__heading {
+        font-size: 64px;
+    }
+}
+
+p.banner__body {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: white;
+}
+
+h3 {
+    font-size: 1.16rem;
+}
+/* Banner */
+.banner {
+    background-color: var(--color-primary);
+    padding-bottom: 1rem;
+}
 
 /* Grids */
 .grid {
     display: grid;
 }
 
-@media screen and (min-width: 768px){
-    .grid--1x2{
+@media screen and (min-width: 768px) {
+    .grid--1x2 {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media screen and (min-width: 1024px){
-    .grid--1x3{
+@media screen and (min-width: 1024px) {
+    .grid--1x3 {
         grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1324px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .grid--inner {
         display: block;
     }
 }
+
+/* Biography &  Skills sections */
+
+#biography, #skills {
+    padding: 1rem 2rem;
+}
+
+
+.article__grid--1x2 {
+    display: block;
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    .article__grid--1x2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Images */
+
+.image--container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.image--container--self {
+    padding-left: 1.5rem;
+    margin-top: auto;
+    position: absolute;
+}
+
+
+.image--bio {
+    height: 400px;
+    transform: translate(calc(-35% + 18vw), -18%);
+    transition: 0.3s;
+}
+
+.image--skills {
+    height: 400px;
+    transform: translate(calc(-35% + 18vw), -18%);
+    transition: 0.3s;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .image--container {
+        width: 100%;
+        height: 250px;
+    }
+
+    .image--bio{
+        height: 600px;
+        transform: translate(calc(-40% + 35vw), -20%);
+    }
+
+    .image--skills {
+        height: 700px;
+        transform: translate(calc(-47% + 35vw), -35%);
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .image--container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .image--bio {
+        height: 530px;
+        transform: translate(calc(-58% + 28vw), 0);
+    }
+
+
+    .image--skills {
+        height: 550px;
+        transform: translate(calc(35% - 28vw), 0);
+    }
+
+}
+/* Prevent images from sliding out of view */
+@media screen and (min-width: 1500px) {
+
+    .image--skills {
+        height: 550px;
+        transform: translate(-20px, 0);
+    }
+
+    .image--bio {
+        height: 530px;
+        transform: translate(-20px, 0);
+    }
+
+}
+
 
 /* Tables */
 table {
@@ -64,28 +240,15 @@ table tr:hover {
     background-color: #ddd;
 }
 
-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: var(--color-primary);
-    color: white;
-}
-
-th {
-    colspan: 2;
-}
-
-
 /* Testimonials */
 
 .testimonial {
-padding: 1.5rem 0.5rem 0.8rem 0.5rem ;
+    padding: 1.5rem 0.5rem 0.8rem 0.5rem;
 }
 
 @media screen and (min-width: 768px) {
     .testimonial {
-        padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+        padding: 0.8rem 0.5rem 0.3rem 0.5rem;
     }
 }
 
@@ -95,29 +258,49 @@ padding: 1.5rem 0.5rem 0.8rem 0.5rem ;
     }
 }
 
+/* todo figure out why space-between is not working on min-width 1024 */
+
 .testimonial span {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+
 .testimonial__image {
-width: 100%;
-    border-radius: 100%;
+    width: 100%;
 }
 
 .testimonial blockquote {
+    font-size: 18px;
     font-style: italic;
-    padding-bottom: 2rem;
+    padding: 0rem 1rem 2rem 1rem;
+}
+
+@media screen and (min-width: 768px) {
+
+    .testimonial blockquote {
+        font-size: 22px;
+        padding: 0rem 0.5rem 0rem 0.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .testimonial blockquote {
+        font-size: 22px;
+        padding: 0 0 2rem 0;
+    }
 }
 
 .testimonial__signature {
 }
 
-.testimonial__person{
+.testimonial__person {
     color: var(--color-primary);
 }
-.testimonial__person::before{
+
+.testimonial__person::before {
     content: "-";
 }
 
@@ -142,7 +325,7 @@ width: 100%;
 
 .card {
     margin: 1rem;
-border-radius: 7px;
+    border-radius: 7px;
     box-shadow: 0 0 20px #ded6d6;
     overflow: hidden;
     margin-left: auto;
@@ -158,6 +341,19 @@ border-radius: 7px;
     }
 }
 
+@media screen and (min-width: 1024px) {
+    .card {
+        max-width: 1324px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card.testimonial {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
 .card__header, .card__body {
     padding: 1rem 2rem;
 
@@ -165,5 +361,54 @@ border-radius: 7px;
 
 .card__header {
     color: white;
+    font-weight: 700;
+    font-size: 18px;
     background-color: var(--color-primary);
+}
+
+/* Lists */
+ul {
+    padding-top: 2rem;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+
+.footer {
+
+    background-color: var(--color-primary);
+}
+
+.footer h1 {
+    color: white;
+    border-color: white;
+    padding-top: 1rem;
+    text-transform: uppercase;
+}
+
+.footer p{
+    color: white;
+    text-align: center;
+    padding: 0 1rem 3rem 1rem;
+}
+
+.footer_links {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.footer_links a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.footer_links a:hover {
+    font-weight: 700;
 }
