@@ -236,10 +236,6 @@ table tr:nth-child(even) {
     background-color: #f6f4f4;
 }
 
-table tr:hover {
-    background-color: #ddd;
-}
-
 /* Testimonials */
 
 .testimonial {
@@ -324,12 +320,10 @@ table tr:hover {
 /* Cards */
 
 .card {
-    margin: 1rem;
     border-radius: 7px;
     box-shadow: 0 0 20px #ded6d6;
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1rem auto;
     max-width: 450px;
 }
 
@@ -400,7 +394,6 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
 }
 
 .footer_links a {
