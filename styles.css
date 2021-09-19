@@ -271,7 +271,7 @@ table tr:hover {
     width: 100%;
 }
 
-.testimonial blockquote {
+.testimonial q {
     font-size: 18px;
     font-style: italic;
     padding: 0rem 1rem 2rem 1rem;
@@ -279,7 +279,7 @@ table tr:hover {
 
 @media screen and (min-width: 768px) {
 
-    .testimonial blockquote {
+    .testimonial q {
         font-size: 22px;
         padding: 0rem 0.5rem 0rem 0.5rem;
     }
@@ -287,7 +287,7 @@ table tr:hover {
 
 @media screen and (min-width: 1024px) {
 
-    .testimonial blockquote {
+    .testimonial q {
         font-size: 22px;
         padding: 0 0 2rem 0;
     }
@@ -313,11 +313,11 @@ table tr:hover {
     content: "-";
 }
 
-.testimonial blockquote::before {
+.testimonial q::before {
     content: open-quote;
 }
 
-.testimonial blockquote::after {
+.testimonial q::after {
     content: close-quote;
 }
 
